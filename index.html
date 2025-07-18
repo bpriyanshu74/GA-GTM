@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home – Demo Site</title>
+  <style>
+    nav a { margin: 0 10px; text-decoration: none; color: #0366d6; }
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .button { padding: 10px 20px; background: #28a745; border: none; color: white; cursor: pointer; }
+    form { margin-top: 20px; max-width: 400px; }
+    label { display: block; margin-bottom: 5px; }
+    input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    #feedbackMessage { margin-top: 10px; color: #155724; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <h1>Welcome to the Demo Site</h1>
+
+  <button class="button" onclick="sayHello()">Hello</button>
+
+  <form id="feedbackForm">
+    <h2>Feedback Form</h2>
+    <label for="feedback">Your feedback:</label>
+    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+    <button type="submit" class="button">Submit</button>
+  </form>
+
+  <p id="feedbackMessage"></p>
+
+  <script>
+    function sayHello() {
+      alert("Hello! 👋");
+    }
+
+    const form = document.getElementById('feedbackForm');
+    const msg = document.getElementById('feedbackMessage');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msg.textContent = "Thank you for your feedback!";
+      form.reset();
+    });
+  </script>
+</body>
+</html>
